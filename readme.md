@@ -37,8 +37,9 @@ Por ser uma aplicação web estática, basta abrir o arquivo `index.html` em qua
 
 ---
 
-## 👨‍💻 Autor
+## 👨🏻‍💻 Autor
 
 * **[Rafael Bastos da Silveira]**
 * **LinkedIn:** https://www.linkedin.com/in/rafaelslvra/
+
 * **GitHub:** https://github.com/Ryaxo
