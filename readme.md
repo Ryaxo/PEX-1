@@ -12,9 +12,8 @@ Este repositório contém o código-fonte completo da aplicação, que foi desen
 
 * **HTML5:** Estruturação da página.
 * **Tailwind CSS:** Estilização e design responsivo.
-* **JavaScript (ES6+):** Interatividade, manipulação de dados e lógica do dashboard.
+* **JavaScript:** Interatividade, manipulação de dados e lógica do dashboard.
 * **Chart.js:** Criação dos gráficos interativos.
-* **Git & GitHub:** Versionamento e hospedagem do código.
 
 ---
 
@@ -45,5 +44,6 @@ Por ser uma aplicação web estática, basta abrir o arquivo `index.html` em qua
 * **LinkedIn:** https://www.linkedin.com/in/rafaelslvra/
 
 * **GitHub:** https://github.com/Ryaxo
+
 
 
