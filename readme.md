@@ -35,7 +35,7 @@ Este repositório contém o código-fonte completo da aplicação, que foi desen
 
 Por ser uma aplicação web estática, basta abrir o arquivo `index.html` em qualquer navegador de internet moderno.
 
-[Clique aqui para ver o Manual do Usuário](./docs/manual_do_usuario.pdf)
+[Clique aqui para ver o Manual do Usuário](manual_do_usuario.pdf)
 
 ---
 
@@ -45,4 +45,5 @@ Por ser uma aplicação web estática, basta abrir o arquivo `index.html` em qua
 * **LinkedIn:** https://www.linkedin.com/in/rafaelslvra/
 
 * **GitHub:** https://github.com/Ryaxo
+
 
