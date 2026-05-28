@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard de Análise de Vendas - Luiz Mauricio Garcia da Silveira - Top-Mar Comercial</title>
+    <title>Dashboard de Análise de Vendas - Luiz Mauricio Garcia da Silveira Top-Mar Comercial</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -55,7 +55,7 @@
                         <h1 class="text-2xl font-bold text-gray-800">Dashboard de Vendas</h1>
                     </div>
                     <div class="text-right">
-                        <p class="font-semibold text-gray-700">Luiz Mauricio Garcia da Silveira - Top-Mar Comercial</p>
+                        <p class="font-semibold text-gray-700">Luiz Mauricio Garcia da Silveira Top-Mar Comercial - Top-Mar Comercial</p>
                         <p class="text-sm text-gray-500">Análise de Performance</p>
                     </div>
                 </div>
@@ -69,8 +69,7 @@
                         <select id="period-filter" class="w-full bg-white border border-gray-300 rounded-lg shadow-sm p-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
                             <option value="30">Últimos 30 dias</option>
                             <option value="90">Últimos 90 dias</option>
-                            <option value="180" selected>Últimos 6 meses</option>
-                            <option value="365">Último ano</option>
+                            <option value="150" selected>Últimos 5 meses</option>
                         </select>
                     </div>
                     <div class="flex-1">
@@ -173,7 +172,7 @@
     <script>
         const regions = ['Sudeste', 'Sul', 'Nordeste', 'Centro-Oeste', 'Norte'];
         const categories = ['Ferramentas', 'Materiais Básicos', 'Elétrica', 'Hidráulica', 'Acabamentos', 'Pintura'];
-        const salespeople = ['Cenourinha', 'Batatinha', 'Abobrinha', 'Beterrabinha', 'Tomatinho'];
+        const salespeople = ['Anthony', 'Mauren', 'Penelope', 'Gregory', 'Dante'];
         const customers = Array.from({ length: 150 }, (_, i) => `Cliente ${1001 + i}`);
 
         function generateMockData(days) {
@@ -198,6 +197,29 @@
         }
 
         let fullSalesData = generateMockData(365);
+        // Vendas Recentes fixas em Maio de 2026 (não aleatórias)
+        const recentSalesFixed = (() => {
+            const arr = [];
+            const startMay = new Date(2026, 4, 22); // 22 May 2026
+            for (let i = 0; i < 10; i++) {
+                const date = new Date(startMay);
+                date.setDate(startMay.getDate() + i);
+                arr.push({
+                    id: `VEN-MAI-${100 + i}`,
+                    date: date.toISOString().split('T')[0],
+                    customer: customers[i % customers.length],
+                    salesperson: salespeople[i % salespeople.length],
+                    region: regions[i % regions.length],
+                    category: categories[i % categories.length],
+                    value: Math.floor(Math.random() * 180) + 20,
+                    isNewCustomer: i % 5 === 0
+                });
+            }
+            // Ordenar por data decrescente (mais recente primeiro)
+            arr.sort((a, b) => new Date(b.date) - new Date(a.date));
+            return arr;
+        })();
+
         let chartInstances = {};
         let currentFilteredData = [];
 
@@ -223,7 +245,8 @@
             updateSalesByRegionChart(currentFilteredData);
             updateSalesByCategoryChart(currentFilteredData);
             updateTopSalespeopleChart(currentFilteredData);
-            updateSalesTable(currentFilteredData.slice(0, 10));
+            // Mostrar sempre as vendas recentes fixas em Maio (não aleatórias)
+            updateSalesTable(recentSalesFixed.slice(0, 10));
         }
 
         function updateKPIs(data) {
