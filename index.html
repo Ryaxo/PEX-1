@@ -197,7 +197,7 @@
         }
 
         let fullSalesData = generateMockData(365);
-        // Vendas Recentes fixas em Maio de 2026 (não aleatórias)
+       
         const recentSalesFixed = (() => {
             const arr = [];
             const startMay = new Date(2026, 4, 22); // 22 May 2026
@@ -245,7 +245,7 @@
             updateSalesByRegionChart(currentFilteredData);
             updateSalesByCategoryChart(currentFilteredData);
             updateTopSalespeopleChart(currentFilteredData);
-            // Mostrar sempre as vendas recentes fixas em Maio (não aleatórias)
+            
             updateSalesTable(recentSalesFixed.slice(0, 10));
         }
 
