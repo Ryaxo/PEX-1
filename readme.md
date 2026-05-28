@@ -1,4 +1,4 @@
-# Dashboard de Análise de Vendas - Top-Mar Comercial
+# Dashboard de Análise de Vendas - Luiz Mauricio Garcia da Silveira - Top-Mar Comercial
 
 ## 📖 Sobre o Projeto
 
